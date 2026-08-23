@@ -1,26 +1,44 @@
-name: Test deployment
+name: Documentation, Spelling & Build Check
 
 on:
   pull_request:
     branches:
       - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  workflow_dispatch:
 
 jobs:
-  test-deploy:
-    name: Test deployment
+  check-docs:
+    name: Verify Build, HTML & Spelling
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+
+      - name: Spell & Grammar Check (Markdown)
+        uses: streetsidesoftware/cspell-action@v6
         with:
-          node-version: 18
+          config: .cspell.json
+          files: '**/*.md'
+          incremental_files_only: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
           cache: yarn
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test build website
+
+      - name: Build static HTML
         run: yarn build
+
+      - name: Verify build output exists
+        run: |
+          if [ ! -f build/index.html ]; then
+            echo "❌ Error: build/index.html not generated!"
+            exit 1
+          fi
+          echo "✅ Static HTML build verified successfully for GitHub Pages."

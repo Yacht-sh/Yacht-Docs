@@ -25,7 +25,7 @@ In the main view of the applications page you can see the following:
 Apps are sortable by the columns at the top or searchable via the searchbar at the top. Click on an app to view more details. Ports will be labeled if they were set when deployed. 
 
 ### Updates
-To check for updates click on the chevron next to "Apps" at the top of the page and then "Check for updates". This will querry dockerhub and check the latest manifest for your tag against the currently running one. Once the check is complete there will be a green dot next to applications with updates available. You can go into App Actions to update the app.
+To check for updates click on the chevron next to "Apps" at the top of the page and then "Check for updates". This will query Docker Hub and check the latest manifest for your tag against the currently running one. Once the check is complete there will be a green dot next to applications with updates available. You can go into App Actions to update the app.
 
 ## Application Info
 

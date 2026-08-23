@@ -1,6 +1,6 @@
 ---
 title: ARM
-description: Arm Caviats
+description: ARM Caveats
 hide_table_of_contents: true
 id: ARM
 ---

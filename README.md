@@ -1,35 +1,59 @@
-# Website
+# Yacht Documentation Website ⛵
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+Official documentation source for **[Yacht](https://github.com/SelfhostedPro/Yacht)** — a web interface for managing Docker containers with an emphasis on templates and 1-click deployments.
 
-## Installation
+This website is built with **[Docusaurus](https://docusaurus.io/)**.
 
-```console
-yarn install
+---
+
+## 🚀 Quick Start
+
+### 1. Prerequisites
+- **Node.js**: >= 18.0 (Node 20 recommended)
+- **Yarn**: Classic (`v1.x`)
+
+### 2. Installation
+
+```bash
+yarn install --frozen-lockfile
 ```
 
-## Local Development
+### 3. Local Development
 
-```console
+```bash
 yarn start
 ```
 
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+Starts a local development server at `http://localhost:3000` with hot-reloading.
 
-## Build
+### 4. Build
 
-```console
+```bash
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Compiles the static assets and HTML into the `build/` directory for production deployment.
 
-## Deployment
+---
 
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
+## 🚢 CI/CD & Deployment
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Deployments to **GitHub Pages** are automated via GitHub Actions:
+- Any commit merged into the `main` branch triggers `.github/workflows/deploy.yml`.
+- Builds the Docusaurus project and publishes the artifact directly to the GitHub Pages environment.
+- Manual triggers are also available via `workflow_dispatch` in the **Actions** tab.
 
-#push to update date on site. 
+---
+
+## 🤝 Contributing
+
+Contributions to improve Yacht's documentation are welcome!
+1. Fork or branch from `main`.
+2. Edit or add documentation markdown files in `docs/` and sidebar entries in `sidebars.js`.
+3. Test locally with `yarn start`.
+4. Open a Pull Request.
+
+---
+
+## 📜 License
+Licensed under the [MIT License](LICENSE).

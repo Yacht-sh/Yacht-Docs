@@ -1,4 +1,4 @@
-name: HTML & Build Check
+name: Documentation, Spelling & Build Check
 
 on:
   pull_request:
@@ -7,14 +7,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-build:
-    name: Verify Documentation Build & HTML
+  check-docs:
+    name: Verify Build, HTML & Spelling
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Spell & Grammar Check (Markdown)
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          config: .cspell.json
+          files: '**/*.md'
+          incremental_files_only: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

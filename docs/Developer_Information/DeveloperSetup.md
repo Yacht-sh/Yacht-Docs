@@ -13,7 +13,7 @@ This assumes you're using vscode and will want to use the debugging tools for th
 Clone the repo:
 
 ```bash
-git clone https://github.com/SelfhostedPro/Yacht.git
+git clone https://github.com/Yacht-sh/Yacht.git
 ```
 
 Create the config directory for the sqlite db:
@@ -76,7 +76,7 @@ Here is an untested script that basically combines everything except for the lau
 
 ```bash
 #!/bin/bash
-git clone https://github.com/SelfhostedPro/Yacht.git
+git clone https://github.com/Yacht-sh/Yacht.git
 cd Yacht
 mkdir config
 cd backend

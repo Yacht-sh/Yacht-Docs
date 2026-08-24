@@ -26,7 +26,7 @@ services:
       - PUID=0
       - PGID=0
       - COMPOSE_DIR=/compose
-    image: selfhostedpro/yacht:latest
+    image: ghcr.io/yacht-sh/yacht:latest:latest
 volumes:
   yacht:
 ```

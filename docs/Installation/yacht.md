@@ -10,7 +10,7 @@ Installing Yacht via docker is as simple as running two commands:
 
 ```bash
 docker volume create yacht
-docker run -d -p 8000:8000 --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v yacht:/config --name yacht selfhostedpro/yacht
+docker run -d -p 8000:8000 --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v yacht:/config --name yacht ghcr.io/yacht-sh/yacht:latest:latest
 ```
 
 This will start Yacht on port 8000 (change this to 8001 if you're also using portainer).
@@ -48,7 +48,7 @@ services:
     volumes:
       - yacht:/config
       - /var/run/docker.sock:/var/run/docker.sock
-    image: selfhostedpro/yacht
+    image: ghcr.io/yacht-sh/yacht:latest:latest
 
 volumes:
   yacht:
